@@ -43,7 +43,7 @@ TEST</p>
     branding: `
       <p><img height="200" src="images/branding/concordia_logo.svg" width="200"/></p>
 <h1>CONCORDIA CASH</h1>
-<h3>Brand Guidelines</h3>
+<h3>Brand Guidelines.</h3>
 <p>Welcome to the official brand guidelines for CONCORDIA CASH. </p>
 <p>This document is your comprehensive guide to understanding and correctly applying our brand identity, reflecting our bold and revolutionary mission in the blockchain landscape.</p>
 <p>Born from the merge of 17 abandoned blockchains, CONCORDIA is not just a new platform, it's a new philosophy of decentralized governance. </p>
