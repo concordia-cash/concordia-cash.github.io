@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <p>Tezos provides an entirely different example. As one of the first chains to implement formal on-chain governance, it empowers its XTZ holders to propose and vote directly on upgrades. Its self-amending protocol allows it to evolve without hard forks. Every successful proposal can include funding mechanisms for contributors, ensuring a sustainable development cycle. Tezos proves that it is possible to design a Layer 1 chain where decisions are made transparently, collectively, and without dependence on off-chain authority.</p>
 <p>Concordia Cash takes inspiration from this more democratic model. It transitions from a failed governance system, or the lack thereof, to a 180-degree turn where it is being rebuilt with a clear commitment to coin-holder sovereignty. Its DAO-first structure ensures that the community decides everything, from technical upgrades and protocol rules to budget allocation and team roles. Concordia is not just another chain. It is a response to the governance failures of the past and a demonstration of what community-led cryptocurrency can look like.</p>
 <h2>The Concordia Proposal</h2>
-<p>TEST</p>
+<p>TEST
+TEST</p>
 <h3>The Curators' Role</h3>
 <h3>The Burn Process</h3>
 <h3>Use Cases</h3>
