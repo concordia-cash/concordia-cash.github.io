@@ -89,16 +89,19 @@ def build_js(template_js_path, output_js_path, rendered_blocks):
 
 def copy_static_assets():
     print(f"🔄 Copying static assets from `{ASSETS_FOLDER}` to `{PUBLIC_FOLDER}`...")
-    for file in ["styles.css"]:
-        src = os.path.join(ASSETS_FOLDER, file)
-        dst = os.path.join(PUBLIC_FOLDER, file)
-        if os.path.exists(src):
-            shutil.copy(src, dst)
-    # Copy all images
-    image_src = os.path.join(ASSETS_FOLDER, "images")
-    image_dst = os.path.join(PUBLIC_FOLDER, "images")
-    if os.path.exists(image_src):
-        shutil.copytree(image_src, image_dst, dirs_exist_ok=True)
+
+    if not os.path.exists(ASSETS_FOLDER):
+        print(f"[WARN] Assets folder `{ASSETS_FOLDER}` not found.")
+        return
+
+    for root, dirs, files in os.walk(ASSETS_FOLDER):
+        for file in files:
+            src_path = os.path.join(root, file)
+            rel_path = os.path.relpath(src_path, ASSETS_FOLDER)
+            dst_path = os.path.join(PUBLIC_FOLDER, rel_path)
+
+            os.makedirs(os.path.dirname(dst_path), exist_ok=True)
+            shutil.copy2(src_path, dst_path)
 
 def main():
     # Clean public folder completely
