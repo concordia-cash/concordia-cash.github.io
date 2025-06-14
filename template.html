@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concordia Cash</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+  <!-- Main Content Container -->
+  <div class="container mx-auto px-8 flex-grow flex flex-col justify-center items-center text-center">
+    <img class="concordia-logo mb-4 block" src="images/concordia_logo.svg" alt="Concordia Cash Logo">
+    
+    <div class="main-title-container">
+      <div class="concordia-cash-title">CONCORDIA CASH</div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links flex justify-center items-center gap-4 mb-8">
+      <a href="https://discord.gg/W4vUeKQWaM" target="_blank" rel="noopener noreferrer" class="flex items-center text-[var(--concordia-green)] hover:text-[var(--tech-blue)] transition-colors duration-300 font-medium">
+        <svg class="social-icon w-6 h-6 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Discord</title><path d="..."/></svg>
+        Discord Server
+      </a>
+      <span class="text-gray-400">|</span>
+      <a href="https://github.com/concordia-cash" target="_blank" rel="noopener noreferrer" class="flex items-center text-[var(--concordia-green)] hover:text-[var(--tech-blue)] transition-colors duration-300 font-medium">
+        <svg class="social-icon w-6 h-6 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="..."/></svg>
+        GitHub
+      </a>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-6">
+      <button data-content="website" class="main-button font-medium py-4 px-10 rounded-xl">Website</button>
+      <button data-content="whitepaper" class="main-button font-medium py-4 px-10 rounded-xl">Whitepaper</button>
+      <button data-content="branding" class="main-button font-medium py-4 px-10 rounded-xl">Branding</button>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div id="contentOverlay" class="overlay fixed inset-0 z-50 flex justify-center items-center p-4 hidden" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+    <div class="overlay-content relative w-full max-w-4xl max-h-[90vh] p-8 sm:p-10 rounded-2xl flex flex-col">
+      <button id="closeButton" class="close-button absolute top-4 right-4" aria-label="Close dialog">&times;</button>
+      <div class="scrollable-markdown-container flex-grow overflow-y-auto pr-2">
+        <div id="contentDisplay" class="markdown-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Script -->
+  <script src="site.js"></script>
+</body>
+</html>

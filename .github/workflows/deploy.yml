@@ -1,0 +1,35 @@
+name: Build and Deploy Static Site
+
+on:
+  push:
+    branches: [ main ]  # Change to your default branch if needed
+
+permissions:
+  contents: write  # Required for GitHub Pages deploy
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: 🐍 Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: 📦 Install Dependencies
+      run: |
+        pip install requests markdown beautifulsoup4
+
+    - name: 🛠 Build Static Site
+      run: |
+        python build.py
+
+    - name: 🚀 Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
