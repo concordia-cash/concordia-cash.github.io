@@ -29,14 +29,17 @@
 
         <div class="main-title-container">
             <div class="concordia-cash-title">CONCORDIA CASH</div>
+            <p class="italic text-base sm:text-lg md:text-xl mt-2 leading-tight">
+                Decentralized by Design. Governed by You.<br>Your Coins, Your Voice.
+            </p>
         </div>
 
         <!-- Social Links -->
         <div class="social-links flex justify-center items-center gap-4 mb-8">
-            <a href="https://discord.gg/W4vUeKQWaM" target="_blank" rel="noopener noreferrer"
+            <a href="https://discord.gg/jXUpZVMZFC" target="_blank" rel="noopener noreferrer"
                 class="flex items-center text-[var(--concordia-green)] hover:text-[var(--tech-blue)] transition-colors duration-300 font-medium">
                 <i class="fab fa-discord fa-lg mr-2"></i>
-                Discord Server
+                Discord
             </a>
             <span class="text-gray-400">|</span>
             <a href="https://github.com/concordia-cash" target="_blank" rel="noopener noreferrer"
@@ -48,9 +51,9 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-6">
-            <button data-content="website" class="main-button font-medium py-4 px-10 rounded-xl">Website</button>
             <button data-content="whitepaper" class="main-button font-medium py-4 px-10 rounded-xl">Whitepaper</button>
             <button data-content="branding" class="main-button font-medium py-4 px-10 rounded-xl">Branding</button>
+            <button data-content="social_media" class="main-button font-medium py-4 px-10 rounded-xl">Social Media</button>
         </div>
     </div>
 
@@ -62,25 +65,43 @@
                 aria-label="Close dialog">&times;</button>
             <div class="scrollable-markdown-container flex-grow overflow-y-auto pr-2">
                 <div id="contentDisplay" class="markdown-body">
-                    <div id="websiteContent" class="markdown-body hidden">
-                        <h2 id="dialogTitle" class="text-3xl font-bold mb-4">Website Under Construction</h2>
-                        <p class="text-lg mb-2">Our official CONCORDIA CASH website is currently under development.</p>
-                        <p class="text-lg mb-4">Please check back regularly for updates!</p>
-                        <p class="text-lg">
-                            <a href="https://concordia.cash/" target="_blank" rel="noopener noreferrer"
-                                class="text-[var(--concordia-green)] hover:text-[var(--concordia-red)] font-semibold underline">https://concordia.cash/</a>
-                        </p>
-                    </div>
                     <div id="whitepaperContent" class="markdown-body hidden">
                         <!--__WHITEPAPER_HTML__-->
                     </div>
                     <div id="brandingContent" class="markdown-body hidden">
                         <!--__BRANDING_HTML__-->
                     </div>
+                    <div id="socialContent" class="markdown-body hidden">
+                        <h2 id="dialogTitle" class="text-3xl font-bold mb-4">CONCORDIA CASH Social Media</h2>
+                        <p class="text-lg mb-2">Connect with us across our various social platforms to stay updated on the latest news, announcements, and community discussions. Join our growing community by following us on these channels:</p>
+                        <ul class="list-disc pl-5 text-lg">
+                            <li class="mb-2"><a href="https://discord.gg/jXUpZVMZFC" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">Discord</a></li>
+                            <li class="mb-2"><a href="https://github.com/concordia-cash" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">GitHub</a></li>
+                            <li class="mb-2"><a href="https://x.com/concordia_cash" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">X (formerly Twitter)</a></li>
+                            <li class="mb-2"><a href="https://www.reddit.com/r/concordia_cash/" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">Reddit</a></li>
+                            <li class="mb-2"><a href="https://www.instagram.com/concordia_cash" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">Instagram</a></li>
+                            <li class="mb-2"><a href="https://www.youtube.com/@ConcordiaCash" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">YouTube</a></li>
+                            <li class="mb-2"><a href="https://medium.com/@concordiacash" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">Medium</a></li>
+                            <li class="mb-2"><a href="https://www.publish0x.com/concordia-cash" target="_blank" rel="noopener noreferrer" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">Publish0x</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-200 py-6 mt-auto text-[var(--dark-neutral-grey)]">
+        <div class="container mx-auto px-8 text-center">
+            <p class="text-sm">
+                &copy; <span id="currentYear"></span> Concordia Cash. All rights reserved.
+            </p>
+            <p class="text-sm mt-1">
+                <span class="font-semibold">Concordia Curators</span> – 
+                <a href="mailto:concordia.curators@gmail.com" class="text-[var(--concordia-green)] hover:text-[var(--tech-blue)] font-semibold underline">concordia.curators@gmail.com</a>
+            </p>
+        </div>
+    </footer>
 
     <!-- External Script -->
     <script src="site.js"></script>
