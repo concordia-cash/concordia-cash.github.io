@@ -2,11 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('contentOverlay');
   const closeBtn = document.getElementById('closeButton');
   const buttons = document.querySelectorAll('.main-button');
+  const currentYearSpan = document.getElementById('currentYear');
 
   const contentBlocks = {
-    website: document.getElementById('websiteContent'),
     whitepaper: document.getElementById('whitepaperContent'),
     branding: document.getElementById('brandingContent'),
+    social_media: document.getElementById('socialContent'),
   };
 
   let currentVisible = null;
@@ -42,4 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') hideOverlay();
   });
+
+  if (currentYearSpan) {
+      currentYearSpan.textContent = new Date().getFullYear();
+  }
 });

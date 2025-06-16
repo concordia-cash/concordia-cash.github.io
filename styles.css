@@ -1,258 +1,293 @@
-:root {
-  --concordia-green: #016001;
-  --concordia-white: #FEFEFE;
-  --tech-blue: #2A80B9;
-  --dark-neutral-grey: #4B5563;
-  --h4-grey: #1f2937;
-  --light-neutral-grey: #D1D5DB;
-  --accent-gold: #FFD700;
-  --concordia-red: #FF0000;
-  --text-on-light: var(--dark-neutral-grey);
-  --text-on-dark: var(--concordia-white);
-}
+        :root {
+            --concordia-green: #016001;
+            --concordia-white: #FEFEFE;
+            --tech-blue: #2A80B9;
+            --dark-neutral-grey: #4B5563; /* Defined Dark Neutral Grey */
+            --h4-grey: #1f2937; /* Added for H4 as per guide */
+            --light-neutral-grey: #D1D5DB;
+            --accent-gold: #FFD700;
+            --concordia-red: #FF0000;
+            --text-on-light: var(--dark-neutral-grey);
+            --text-on-dark: var(--concordia-white);
+        }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #f0f4f8;
-  color: var(--text-on-light);
-}
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8;
+            color: var(--text-on-light);
+        }
+        
+        /* Typography - Montserrat for headings */
+        h1, h2, h3, h4, .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
 
-h1, h2, h3, h4,
-.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
-  font-family: 'Montserrat', sans-serif;
-}
+        /* Concordia Logo styling */
+        .concordia-logo {
+            width: 200px; /* Doubled width for desktop */
+            height: auto; /* Maintain aspect ratio */
+            margin: 0 auto 1.5rem auto; /* Increased margin below logo */
+            display: block;
+        }
+        /* Mobile Concordia Logo */
+        @media (max-width: 640px) {
+            .concordia-logo {
+                width: 160px; /* Doubled width for mobile */
+            }
+        }
+        
+        /* Main Title Container Styling */
+        .main-title-container {
+            text-align: center;
+            margin-bottom: 1.5rem; /* Space below the combined title */
+            color: var(--concordia-green);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-/* Concordia Logo styling (SVG) */
-.concordia-logo {
-  width: 200px;
-  height: auto;
-  margin: 0 auto 1.5rem auto;
-  display: block;
-}
-@media (max-width: 640px) {
-  .concordia-logo {
-    width: 160px;
-  }
-}
+        .concordia-cash-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700; /* Changed to Montserrat Black (700) */
+            font-size: 2.75rem; /* Adjusted for impact */
+            line-height: 1.1; /* Tighter line height for stacked text */
+        }
 
-/* Title */
-.main-title-container {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--concordia-green);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-.concordia-cash-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 2.75rem;
-  line-height: 1.1;
-}
-@media (max-width: 640px) {
-  .concordia-cash-title {
-    font-size: 2.25rem;
-  }
-}
+        /* Mobile Main Title Adjustments */
+        @media (max-width: 640px) {
+            .concordia-cash-title {
+                font-size: 2.25rem;
+            }
+        }
 
-/* Social icons */
-.social-icon {
-  transition: fill 0.3s ease;
-  fill: var(--concordia-green);
-}
-.social-links a:hover .social-icon {
-  fill: var(--tech-blue);
-}
+        /* Default state for social icons */
+        .social-icon {
+            transition: fill 0.3s ease;
+            fill: var(--concordia-green); /* Reverted fill color to Concordia Green */
+        }
+        
+        /* Hover state for the parent 'a' tag changes the icon fill */
+        .social-links a:hover .social-icon {
+            fill: var(--tech-blue); /* Retained hover fill color to Tech Blue */
+        }
 
-/* Buttons */
-.main-button {
-  background-color: var(--concordia-green);
-  color: var(--text-on-dark);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-}
-.main-button:hover {
-  background-color: var(--tech-blue);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-.main-button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        .main-button {
+            background-color: var(--concordia-green);
+            color: var(--text-on-dark);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
 
-/* Overlay & Dialog */
-.overlay {
-  background-color: rgba(0, 0, 0, 0.85);
-}
-.overlay-content {
-  background-color: var(--concordia-white);
-  color: var(--text-on-light);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-.close-button {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background-color: var(--dark-neutral-grey);
-  color: var(--text-on-dark);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-.close-button:hover {
-  background-color: #3A444F;
-  transform: scale(1.05);
-}
+        .main-button:hover {
+            background-color: var(--tech-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
 
-/* Markdown styling */
-.markdown-body h1 {
-  font-weight: 900;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  color: var(--concordia-green);
-}
-@media (max-width: 640px) {
-  .markdown-body h1 { font-size: 2rem; }
-}
+        .main-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-.markdown-body h2 {
-  color: var(--concordia-green);
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.3;
-}
-@media (max-width: 640px) {
-  .markdown-body h2 { font-size: 1.75rem; }
-}
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
 
-.markdown-body h3 {
-  color: var(--concordia-green);
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1.4;
-}
-@media (max-width: 640px) {
-  .markdown-body h3 { font-size: 1.25rem; }
-}
+        .overlay-content {
+            background-color: var(--concordia-white);
+            color: var(--text-on-light);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
 
-.markdown-body h4 {
-  color: var(--h4-grey);
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-@media (max-width: 640px) {
-  .markdown-body h4 { font-size: 1.125rem; }
-}
+        .close-button {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background-color: var(--dark-neutral-grey); /* Changed to Dark Neutral Grey */
+            color: var(--text-on-dark);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-.markdown-body p {
-  color: var(--dark-neutral-grey);
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1em;
-}
-@media (max-width: 640px) {
-  .markdown-body p { font-size: 0.9375rem; }
-}
+        .close-button:hover {
+            background-color: #3A444F; /* Darker shade of Dark Neutral Grey for hover */
+            transform: scale(1.05);
+        }
+        
+        .loading-spinner {
+            border-top-color: var(--concordia-green);
+        }
+        
+        /* H1 / Page Title (markdown) */
+        .markdown-body h1 {
+            font-weight: 900; /* Montserrat Black */
+            font-size: 2.5rem; /* Desktop: 40px */
+            line-height: 1.2;
+            color: var(--concordia-green);
+        }
+        @media (max-width: 640px) {
+            .markdown-body h1 { font-size: 2rem; } /* Mobile: 32px */
+        }
 
-.markdown-body a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: var(--concordia-green);
-  text-decoration: underline;
-}
-.markdown-body a:hover {
-  color: var(--concordia-red);
-}
-@media (max-width: 640px) {
-  .markdown-body a { font-size: 0.9375rem; }
-}
+        .markdown-body h2 {
+            color: var(--concordia-green);
+            font-weight: 700; /* Montserrat Bold */
+            font-size: 2rem; /* Desktop: 32px */
+            line-height: 1.3;
+        }
+        @media (max-width: 640px) {
+            .markdown-body h2 { font-size: 1.75rem; } /* Mobile: 28px */
+        }
 
-.markdown-body code {
-  background-color: var(--light-neutral-grey);
-  padding: 0.2em 0.4em;
-  margin: 0;
-  font-size: 85%;
-  border-radius: 6px;
-  color: var(--dark-neutral-grey);
-  font-family: monospace;
-}
-.markdown-body pre {
-  background-color: #e2e8f0;
-  font-family: monospace;
-  overflow-x: auto;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-.markdown-body pre code {
-  background-color: transparent;
-  padding: 0;
-  font-size: inherit;
-  border-radius: 0;
-}
+        .markdown-body h3 {
+            color: var(--concordia-green);
+            font-weight: 600; /* Montserrat SemiBold */
+            font-size: 1.5rem; /* Desktop: 24px */
+            line-height: 1.4;
+        }
+        @media (max-width: 640px) {
+            .markdown-body h3 { font-size: 1.25rem; } /* Mobile: 20px */
+        }
+        
+        /* H4 color updated to match branding guide */
+        .markdown-body h4 {
+            color: var(--h4-grey);
+            font-weight: 600; /* Montserrat SemiBold */
+            font-size: 1.25rem; /* Desktop: 20px */
+            line-height: 1.5;
+        }
+        @media (max-width: 640px) {
+            .markdown-body h4 { font-size: 1.125rem; } /* Mobile: 18px */
+        }
 
-.markdown-body ul,
-.markdown-body ol {
-  padding-left: 2em;
-  margin-bottom: 1em;
-}
-.markdown-body li {
-  color: #6b7280;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 0.5em;
-}
-@media (max-width: 640px) {
-  .markdown-body li { font-size: 0.8125rem; }
-}
+        .markdown-body p {
+            color: var(--dark-neutral-grey);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400; /* Open Sans Regular */
+            font-size: 1rem; /* Desktop: 16px */
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+        @media (max-width: 640px) {
+            .markdown-body p { font-size: 0.9375rem; } /* Mobile: 15px */
+        }
+        
+        /* Link typography updated to match branding guide */
+        .markdown-body a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: var(--concordia-green);
+            text-decoration: underline;
+        }
+        @media (max-width: 640px) {
+            .markdown-body a { font-size: 0.9375rem; } /* Mobile: 15px */
+        }
 
-.markdown-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1.5em;
-  border: 1px solid var(--light-neutral-grey);
-  text-align: left;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.5;
-}
-.markdown-body th,
-.markdown-body td {
-  border: 1px solid var(--light-neutral-grey);
-  padding: 0.75em 1em;
-}
-.markdown-body th {
-  background-color: var(--light-neutral-grey);
-  font-weight: 700;
-  color: var(--dark-neutral-grey);
-  font-family: 'Montserrat', sans-serif;
-}
-.markdown-body tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.03);
-}
+        .markdown-body a:hover {
+            color: var(--concordia-tech-blue);
+        }
 
-.scrollable-table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 1.5em;
-}
+        .markdown-body code {
+            background-color: var(--light-neutral-grey);
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            border-radius: 6px;
+            color: var(--dark-neutral-grey);
+            font-family: monospace;
+        }
+        
+        .markdown-body pre {
+             background-color: #e2e8f0;
+             font-family: monospace;
+             overflow-x: auto;
+             padding: 1rem;
+             border-radius: 0.5rem;
+        }
 
-.markdown-body img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1em 0;
-}
+        .markdown-body pre code {
+            background-color: transparent;
+            padding: 0;
+            font-size: inherit;
+            border-radius: 0;
+        }
+        
+        .markdown-body li {
+            color: #6b7280;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400; /* Open Sans Regular */
+            font-size: 0.875rem; /* Desktop: 14px */
+            line-height: 1.5;
+            margin-bottom: 0.5em;
+        }
+        @media (max-width: 640px) {
+            .markdown-body li { font-size: 0.8125rem; } /* Mobile: 13px */
+        }
+
+        .markdown-body ul, .markdown-body ol {
+            padding-left: 2em;
+            margin-bottom: 1em;
+        }
+
+        /* --- New/Improved Markdown Table Styling --- */
+        .markdown-body table {
+            width: 100%;
+            border-collapse: collapse; /* Ensures borders are single lines */
+            margin-bottom: 1.5em; /* Spacing below the table */
+            border: 1px solid var(--light-neutral-grey); /* Overall table border */
+            text-align: left; /* Align text within cells */
+            font-family: 'Open Sans', sans-serif; /* Consistent font for table content */
+            font-size: 0.9375rem; /* Slightly smaller font for table readability */
+            line-height: 1.5; /* Good line height for table text */
+        }
+
+        .markdown-body th,
+        .markdown-body td {
+            border: 1px solid var(--light-neutral-grey); /* Cell borders */
+            padding: 0.75em 1em; /* Ample padding for readability */
+        }
+
+        .markdown-body th {
+            background-color: var(--light-neutral-grey); /* Light background for headers */
+            font-weight: 700; /* Bold headers as per Montserrat Bold (700) */
+            color: var(--dark-neutral-grey); /* Darker text for headers */
+            font-family: 'Montserrat', sans-serif; /* Montserrat for headers */
+        }
+
+        /* Zebra striping for better readability (optional, but good practice) */
+        .markdown-body tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.03); /* Very light shade for even rows */
+        }
+
+        /* Responsive table behavior - wrap table in a div if needed */
+        .scrollable-table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            margin-bottom: 1.5em; /* Match table margin-bottom */
+        }
+
+        /* Ensure images inside markdown are responsive */
+        .markdown-body img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Prevents extra space below image */
+            margin: 1em 0; /* Spacing around images */
+        }
+
+        /* Ensure paragraphs have consistent spacing */
+        .markdown-body p {
+            margin-bottom: 1em;
+        }
+
+        /* List item spacing */
+        .markdown-body ul li, .markdown-body ol li {
+            margin-bottom: 0.5em;
+        }
