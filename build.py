@@ -7,6 +7,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import markdown
+from datetime import datetime
 
 # === Settings ===
 BASE_HTML_PATH = "template.html"
@@ -70,9 +71,14 @@ def build_html(template_path, output_path, rendered_blocks):
     with open(template_path, 'r', encoding='utf-8') as f:
         html = f.read()
 
+    # Replace markdown blocks
     for key, content in rendered_blocks.items():
         placeholder = f"<!--__{key.upper()}_HTML__-->"
         html = html.replace(placeholder, content)
+
+    # Replace copyright year
+    current_year = datetime.now().year
+    html = html.replace("<!--__COPYRIGHT_YEAR__-->", str(current_year))
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
