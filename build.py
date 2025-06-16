@@ -2,7 +2,6 @@ import os
 import re
 import shutil
 import requests
-import uuid
 from pathlib import Path
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
