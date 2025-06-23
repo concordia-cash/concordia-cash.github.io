@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let tocLinks = [];
     let sectionHeadings = [];
 
+    // Define the breakpoint from CSS for consistency
+    const TOC_BREAKPOINT = 1023; // Corresponds to max-width: 1023px in CSS
+
     /**
      * Generates the Table of Contents (TOC) for the given content block.
      * Only generates TOC for 'whitepaper' and 'branding' content.
@@ -29,17 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
         tocLinks = []; // Reset TOC links
         sectionHeadings = []; // Reset section headings
 
-        // TOC is only relevant for whitepaper and branding content
         const needsTOC = contentBlock.id === 'whitepaperContent' || contentBlock.id === 'brandingContent';
+        const isSmallScreen = window.innerWidth <= TOC_BREAKPOINT; // Check current screen size
 
-        if (needsTOC) {
+        if (needsTOC && !isSmallScreen) { // Only generate TOC and show button if needed AND not on small screen
             const headings = contentBlock.querySelectorAll('h2, h3');
             if (headings.length > 0) {
                 const tocList = document.createElement('ul');
                 tocList.classList.add('space-y-2');
 
                 tocContainer.classList.remove('hidden', 'toc-collapsed');
-                tocToggleButton.classList.remove('hidden');
+                tocToggleButton.classList.remove('hidden'); // Show toggle button
 
                 headings.forEach((heading, index) => {
                     // Ensure each heading has a unique ID for linking
@@ -77,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Ensure toggle button icon is 'left' when TOC is visible
                 tocToggleButton.querySelector('i').classList.replace('fa-chevron-right', 'fa-chevron-left');
             } else {
-                // Hide TOC if no headings are found in a TOC-enabled content block
+                // Hide TOC and toggle button if no headings are found in a TOC-enabled content block
                 tocContainer.classList.add('hidden', 'toc-collapsed');
                 tocToggleButton.classList.add('hidden');
             }
         } else {
-            // Hide TOC for content that doesn't need it (e.g., social media)
+            // Hide TOC and toggle button for content that doesn't need it or on small screens
             tocContainer.classList.add('hidden', 'toc-collapsed');
             tocToggleButton.classList.add('hidden');
         }
@@ -231,6 +234,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
             hideOverlay();
+        }
+    });
+
+    // Initial check on load and resize to handle TOC visibility correctly
+    window.addEventListener('resize', () => {
+        // Re-evaluate TOC visibility if an overlay is open and content is visible
+        if (!overlay.classList.contains('hidden') && currentVisibleContent) {
+            generateTOC(currentVisibleContent);
         }
     });
 });
