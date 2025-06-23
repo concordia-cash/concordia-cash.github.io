@@ -1,293 +1,455 @@
-        :root {
-            --concordia-green: #016001;
-            --concordia-white: #FEFEFE;
-            --tech-blue: #2A80B9;
-            --dark-neutral-grey: #4B5563; /* Defined Dark Neutral Grey */
-            --h4-grey: #1f2937; /* Added for H4 as per guide */
-            --light-neutral-grey: #D1D5DB;
-            --accent-gold: #FFD700;
-            --concordia-red: #FF0000;
-            --text-on-light: var(--dark-neutral-grey);
-            --text-on-dark: var(--concordia-white);
-        }
+:root {
+    --concordia-green: #016001;
+    --concordia-white: #FEFEFE;
+    --tech-blue: #2A80B9;
+    --dark-neutral-grey: #4B5563;
+    --h4-grey: #1f2937; /* Specific grey for H4, matching branding */
+    --light-neutral-grey: #D1D5DB;
+    --accent-gold: #FFD700; /* Currently unused but kept for potential future use */
+    --concordia-red: #FF0000; /* Currently unused but kept for potential future use */
+    --text-on-light: var(--dark-neutral-grey);
+    --text-on-dark: var(--concordia-white);
+}
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f0f4f8;
-            color: var(--text-on-light);
-        }
-        
-        /* Typography - Montserrat for headings */
-        h1, h2, h3, h4, .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
-            font-family: 'Montserrat', sans-serif;
-        }
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f4f8; /* Light blue-grey background */
+    color: var(--text-on-light);
+}
 
-        /* Concordia Logo styling */
-        .concordia-logo {
-            width: 200px; /* Doubled width for desktop */
-            height: auto; /* Maintain aspect ratio */
-            margin: 0 auto 1.5rem auto; /* Increased margin below logo */
-            display: block;
-        }
-        /* Mobile Concordia Logo */
-        @media (max-width: 640px) {
-            .concordia-logo {
-                width: 160px; /* Doubled width for mobile */
-            }
-        }
-        
-        /* Main Title Container Styling */
-        .main-title-container {
-            text-align: center;
-            margin-bottom: 1.5rem; /* Space below the combined title */
-            color: var(--concordia-green);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
+/* Typography - Montserrat for headings in general and within markdown */
+h1, h2, h3, h4, .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+    font-family: 'Montserrat', sans-serif;
+}
 
-        .concordia-cash-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700; /* Changed to Montserrat Black (700) */
-            font-size: 2.75rem; /* Adjusted for impact */
-            line-height: 1.1; /* Tighter line height for stacked text */
-        }
+/* Concordia Logo styling */
+.concordia-logo {
+    width: 200px;
+    height: auto;
+    margin: 0 auto 1.5rem auto; /* Centers the logo horizontally */
+}
 
-        /* Mobile Main Title Adjustments */
-        @media (max-width: 640px) {
-            .concordia-cash-title {
-                font-size: 2.25rem;
-            }
-        }
+/* Mobile adjustments for Concordia Logo */
+@media (max-width: 640px) {
+    .concordia-logo {
+        width: 160px;
+    }
+}
 
-        /* Default state for social icons */
-        .social-icon {
-            transition: fill 0.3s ease;
-            fill: var(--concordia-green); /* Reverted fill color to Concordia Green */
-        }
-        
-        /* Hover state for the parent 'a' tag changes the icon fill */
-        .social-links a:hover .social-icon {
-            fill: var(--tech-blue); /* Retained hover fill color to Tech Blue */
-        }
+/* Main Title Container Styling */
+.main-title-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--concordia-green);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+}
 
-        .main-button {
-            background-color: var(--concordia-green);
-            color: var(--text-on-dark);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-        }
+.concordia-cash-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 1.1;
+}
 
-        .main-button:hover {
-            background-color: var(--tech-blue);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
+/* Mobile adjustments for Main Title */
+@media (max-width: 640px) {
+    .concordia-cash-title {
+        font-size: 2.25rem;
+    }
+}
 
-        .main-button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+/* Main action button styling */
+.main-button {
+    background-color: var(--concordia-green);
+    color: var(--text-on-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
 
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.85);
-        }
+.main-button:hover {
+    background-color: var(--tech-blue);
+    transform: translateY(-3px); /* Subtle lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 
-        .overlay-content {
-            background-color: var(--concordia-white);
-            color: var(--text-on-light);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        }
+.main-button:active {
+    transform: translateY(0); /* Resets on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-        .close-button {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background-color: var(--dark-neutral-grey); /* Changed to Dark Neutral Grey */
-            color: var(--text-on-dark);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
+/* Overlay background */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.85); /* Dark, semi-transparent background */
+}
 
-        .close-button:hover {
-            background-color: #3A444F; /* Darker shade of Dark Neutral Grey for hover */
-            transform: scale(1.05);
-        }
-        
-        .loading-spinner {
-            border-top-color: var(--concordia-green);
-        }
-        
-        /* H1 / Page Title (markdown) */
-        .markdown-body h1 {
-            font-weight: 900; /* Montserrat Black */
-            font-size: 2.5rem; /* Desktop: 40px */
-            line-height: 1.2;
-            color: var(--concordia-green);
-        }
-        @media (max-width: 640px) {
-            .markdown-body h1 { font-size: 2rem; } /* Mobile: 32px */
-        }
+/* Overlay content container */
+.overlay-content {
+    background-color: var(--concordia-white);
+    color: var(--text-on-light);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    max-height: 90vh;
+    overflow: hidden; /* Contains internal scrolling */
+}
 
-        .markdown-body h2 {
-            color: var(--concordia-green);
-            font-weight: 700; /* Montserrat Bold */
-            font-size: 2rem; /* Desktop: 32px */
-            line-height: 1.3;
-        }
-        @media (max-width: 640px) {
-            .markdown-body h2 { font-size: 1.75rem; } /* Mobile: 28px */
-        }
+@media (max-width: 1023px) {
+    .overlay-content {
+        padding: 2rem;
+    }
+}
 
-        .markdown-body h3 {
-            color: var(--concordia-green);
-            font-weight: 600; /* Montserrat SemiBold */
-            font-size: 1.5rem; /* Desktop: 24px */
-            line-height: 1.4;
-        }
-        @media (max-width: 640px) {
-            .markdown-body h3 { font-size: 1.25rem; } /* Mobile: 20px */
-        }
-        
-        /* H4 color updated to match branding guide */
-        .markdown-body h4 {
-            color: var(--h4-grey);
-            font-weight: 600; /* Montserrat SemiBold */
-            font-size: 1.25rem; /* Desktop: 20px */
-            line-height: 1.5;
-        }
-        @media (max-width: 640px) {
-            .markdown-body h4 { font-size: 1.125rem; } /* Mobile: 18px */
-        }
+/* Inner content area of the overlay, contains TOC and main scroll area */
+.overlay-inner-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; /* Allows it to take available height */
+    overflow: hidden; /* Prevents overflow within this flex item */
+    position: relative; /* For positioning TOC toggle button */
+}
 
-        .markdown-body p {
-            color: var(--dark-neutral-grey);
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400; /* Open Sans Regular */
-            font-size: 1rem; /* Desktop: 16px */
-            line-height: 1.6;
-            margin-bottom: 1em;
-        }
-        @media (max-width: 640px) {
-            .markdown-body p { font-size: 0.9375rem; } /* Mobile: 15px */
-        }
-        
-        /* Link typography updated to match branding guide */
-        .markdown-body a {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            color: var(--concordia-green);
-            text-decoration: underline;
-        }
-        @media (max-width: 640px) {
-            .markdown-body a { font-size: 0.9375rem; } /* Mobile: 15px */
-        }
+@media (max-width: 1023px) {
+    .overlay-inner-content {
+        flex-direction: column;
+        gap: 1.5rem; /* Space between TOC (if visible) and main content on smaller screens */
+    }
+}
 
-        .markdown-body a:hover {
-            color: var(--concordia-tech-blue);
-        }
+/* Markdown Body Styling - ensures consistent appearance for dynamic content */
+.markdown-body h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--concordia-green);
+    margin-bottom: 1.5rem;
+}
 
-        .markdown-body code {
-            background-color: var(--light-neutral-grey);
-            padding: 0.2em 0.4em;
-            margin: 0;
-            font-size: 85%;
-            border-radius: 6px;
-            color: var(--dark-neutral-grey);
-            font-family: monospace;
-        }
-        
-        .markdown-body pre {
-             background-color: #e2e8f0;
-             font-family: monospace;
-             overflow-x: auto;
-             padding: 1rem;
-             border-radius: 0.5rem;
-        }
+@media (max-width: 640px) {
+    .markdown-body h1 {
+        font-size: 2rem;
+    }
+}
 
-        .markdown-body pre code {
-            background-color: transparent;
-            padding: 0;
-            font-size: inherit;
-            border-radius: 0;
-        }
-        
-        .markdown-body li {
-            color: #6b7280;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400; /* Open Sans Regular */
-            font-size: 0.875rem; /* Desktop: 14px */
-            line-height: 1.5;
-            margin-bottom: 0.5em;
-        }
-        @media (max-width: 640px) {
-            .markdown-body li { font-size: 0.8125rem; } /* Mobile: 13px */
-        }
+.markdown-body h2 {
+    color: var(--concordia-green);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
 
-        .markdown-body ul, .markdown-body ol {
-            padding-left: 2em;
-            margin-bottom: 1em;
-        }
+@media (max-width: 640px) {
+    .markdown-body h2 {
+        font-size: 1.75rem;
+    }
+}
 
-        /* --- New/Improved Markdown Table Styling --- */
-        .markdown-body table {
-            width: 100%;
-            border-collapse: collapse; /* Ensures borders are single lines */
-            margin-bottom: 1.5em; /* Spacing below the table */
-            border: 1px solid var(--light-neutral-grey); /* Overall table border */
-            text-align: left; /* Align text within cells */
-            font-family: 'Open Sans', sans-serif; /* Consistent font for table content */
-            font-size: 0.9375rem; /* Slightly smaller font for table readability */
-            line-height: 1.5; /* Good line height for table text */
-        }
+.markdown-body h3 {
+    color: var(--concordia-green);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
 
-        .markdown-body th,
-        .markdown-body td {
-            border: 1px solid var(--light-neutral-grey); /* Cell borders */
-            padding: 0.75em 1em; /* Ample padding for readability */
-        }
+@media (max-width: 640px) {
+    .markdown-body h3 {
+        font-size: 1.25rem;
+    }
+}
 
-        .markdown-body th {
-            background-color: var(--light-neutral-grey); /* Light background for headers */
-            font-weight: 700; /* Bold headers as per Montserrat Bold (700) */
-            color: var(--dark-neutral-grey); /* Darker text for headers */
-            font-family: 'Montserrat', sans-serif; /* Montserrat for headers */
-        }
+.markdown-body h4 {
+    color: var(--h4-grey); /* Specific grey for H4 */
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
 
-        /* Zebra striping for better readability (optional, but good practice) */
-        .markdown-body tr:nth-child(even) {
-            background-color: rgba(0, 0, 0, 0.03); /* Very light shade for even rows */
-        }
+@media (max-width: 640px) {
+    .markdown-body h4 {
+        font-size: 1.125rem;
+    }
+}
 
-        /* Responsive table behavior - wrap table in a div if needed */
-        .scrollable-table-wrapper {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            margin-bottom: 1.5em; /* Match table margin-bottom */
-        }
+.markdown-body p {
+    color: var(--dark-neutral-grey);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
 
-        /* Ensure images inside markdown are responsive */
-        .markdown-body img {
-            max-width: 100%;
-            height: auto;
-            display: block; /* Prevents extra space below image */
-            margin: 1em 0; /* Spacing around images */
-        }
+@media (max-width: 640px) {
+    .markdown-body p {
+        font-size: 0.9375rem;
+    }
+}
 
-        /* Ensure paragraphs have consistent spacing */
-        .markdown-body p {
-            margin-bottom: 1em;
-        }
+/* Link typography within markdown */
+.markdown-body a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--concordia-green);
+    text-decoration: underline;
+}
 
-        /* List item spacing */
-        .markdown-body ul li, .markdown-body ol li {
-            margin-bottom: 0.5em;
-        }
+@media (max-width: 640px) {
+    .markdown-body a {
+        font-size: 0.9375rem;
+    }
+}
+
+.markdown-body a:hover {
+    color: var(--tech-blue);
+}
+
+/* Code snippets within markdown */
+.markdown-body code {
+    background-color: var(--light-neutral-grey);
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    border-radius: 6px;
+    color: var(--dark-neutral-grey);
+    font-family: monospace;
+}
+
+.markdown-body pre {
+    background-color: #e2e8f0;
+    font-family: monospace;
+    overflow-x: auto; /* Allows horizontal scrolling for long code lines */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.markdown-body pre code {
+    background-color: transparent; /* Code within pre should not have its own background */
+    padding: 0;
+    font-size: inherit;
+    border-radius: 0;
+}
+
+/* List items within markdown */
+.markdown-body li {
+    color: #6b7280; /* Neutral grey for list items */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+}
+
+@media (max-width: 640px) {
+    .markdown-body li {
+        font-size: 0.8125rem;
+    }
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+/* Markdown Table Styling */
+.markdown-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+    border: 1px solid var(--light-neutral-grey);
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.markdown-body th,
+.markdown-body td {
+    border: 1px solid var(--light-neutral-grey);
+    padding: 0.75em 1em;
+}
+
+.markdown-body th {
+    background-color: var(--light-neutral-grey);
+    font-weight: 700;
+    color: var(--dark-neutral-grey);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Zebra striping for table rows */
+.markdown-body tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Responsive table wrapper for horizontal scrolling on small screens */
+.scrollable-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    margin-bottom: 1.5em;
+    font-size: 0.875rem; /* Ensure tables are readable on smaller screens */
+}
+
+/* Ensure images within markdown are responsive */
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures proper margin application */
+    margin: 1em 0;
+}
+
+/* Table of Contents (TOC) Specific Styling */
+.toc-container {
+    width: 250px;
+    flex-shrink: 0; /* Prevents TOC from shrinking */
+    max-height: 100%;
+    overflow-y: hidden; /* Manages internal scrolling via toc-content-wrapper */
+    transition: width 0.3s ease-out; /* Smooth transition for expand/collapse */
+    padding-bottom: 1.0rem;
+    position: relative; /* For toggle button positioning */
+    border-right: 1px solid var(--light-neutral-grey); /* Vertical separator line */
+}
+
+/* TOC title styling */
+.toc-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--concordia-green);
+    padding: 1rem 1rem 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid var(--light-neutral-grey);
+    flex-shrink: 0; /* Prevents title from shrinking */
+}
+
+/* When TOC is completely hidden (e.g., for 'social media' content) */
+.toc-container.hidden {
+    display: none;
+}
+
+/* Wrapper for the scrollable TOC list */
+.toc-content-wrapper {
+    max-height: calc(100% - 3.2rem); /* Adjusted for title height */
+    overflow-y: auto;
+    padding-right: 0.5rem; /* Space for scrollbar */
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+}
+
+/* Collapsed state for TOC container */
+.toc-container.toc-collapsed {
+    width: 0; /* Hides the TOC */
+}
+
+/* Hide TOC content when collapsed with a transition */
+.toc-container.toc-collapsed .toc-content-wrapper {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s ease-out;
+}
+
+/* Restore visibility and opacity for expanded TOC */
+.toc-container:not(.toc-collapsed) .toc-content-wrapper {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s ease-in;
+}
+
+/* Hide TOC on smaller screens */
+@media (max-width: 1023px) {
+    .toc-container {
+        display: none;
+    }
+}
+
+/* Basic list styling for TOC links */
+.toc-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* TOC link default styling */
+.toc-container a {
+    text-decoration: none;
+    color: var(--dark-neutral-grey);
+    transition: all 0.2s ease;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.toc-container a:hover {
+    color: var(--tech-blue);
+    background-color: var(--light-neutral-grey);
+}
+
+/* Active TOC link styling (for scroll spy) */
+.toc-container .active-toc-item {
+    background-color: var(--concordia-green);
+    color: var(--concordia-white) !important; /* !important to override hover */
+    font-weight: 700;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toc-container .active-toc-item:hover {
+    background-color: var(--concordia-green); /* Keep green on hover when active */
+    color: var(--concordia-white);
+}
+
+/* TOC Toggle Button Styling */
+.toc-toggle-button {
+    position: absolute;
+    /* Position relative to .overlay-inner-content */
+    top: 3%; /* Center vertically relative to parent */
+    transform: translateY(-50%); /* Adjust for button's own height */
+    z-index: 56;
+    background-color: var(--light-neutral-grey);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease, background-color 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 210px; /* Position at the right edge of TOC, accounting for button width */
+}
+
+.toc-toggle-button:hover {
+    background-color: var(--dark-neutral-grey);
+    color: var(--concordia-white);
+}
+
+/* Ensure the TOC toggle button is always hidden when the 'hidden' class is applied by JS */
+.toc-toggle-button.hidden {
+    display: none !important;
+}
+
+/* Shift button when TOC is collapsed */
+.overlay-inner-content .toc-container.toc-collapsed ~ .toc-toggle-button {
+    left: -11px; /* Moves button to the very left edge of the main content area */
+}
+
+/* Styling for the main content scroll area within the overlay */
+#mainContentScrollArea {
+    flex-grow: 1;
+    min-width: 0; /* Allows content to shrink */
+    overflow-y: auto;
+    padding-left: 2rem;
+    padding-right: 0.5rem;
+    transition: padding-left 0.3s ease-out; /* Smooth transition when TOC collapses/expands */
+    position: relative;
+}
+
+/* Styling for the Close message at the bottom of the overlay */
+.overlay-close-message {
+    padding-top: 0rem; /* Space above the link */
+    text-align: center;
+    flex-shrink: 0; /* Prevents it from shrinking */
+}
